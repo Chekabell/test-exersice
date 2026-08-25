@@ -1,0 +1,10 @@
+SELECT COUNT(DISTINCT child.id_kid)
+FROM people person
+JOIN relationships parent ON person.id = parent.id_kid
+JOIN relationships child ON parent.id_parent = child.id_parent
+JOIN people sibling ON child.id_kid = sibling.id
+WHERE person."Фамилия_И._О." = 'Саенко М. А.'
+  AND child.id_kid != person.id
+  AND sibling."пол" = 'М'
+
+Answer: 1

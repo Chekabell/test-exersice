@@ -1,0 +1,10 @@
+﻿SELECT p.id, p."Фамилия_И._О.", p."пол"
+FROM people p
+JOIN relationships r ON p.id = r.id_kid
+GROUP BY p.id, p."Фамилия_И._О.", p."пол"
+HAVING COUNT(r.id_parent) = 1
+
+Answer:
+id      Фамилия_И._О.   пол
+2339	Седых Л. А.	    М
+1974	Тузенбах П. А.	Ж
