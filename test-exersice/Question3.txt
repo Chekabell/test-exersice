@@ -1,7 +1,7 @@
 ﻿SELECT p.id, p."Фамилия_И._О.", p."пол"
 FROM people p
 JOIN relationships r ON p.id = r.id_kid
-GROUP BY p.id, p."Фамилия_И._О.", p."пол"
+GROUP BY p.id
 HAVING COUNT(r.id_parent) = 1
 
 Answer:
